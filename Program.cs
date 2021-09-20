@@ -6,7 +6,15 @@ using Challenge.Models;
 namespace Challenge {
 
   class Program
-  {
+  { 
+    static void Win() {
+      Console.WriteLine("You defeated the sphinx!");
+    }
+
+    static void Lose() {
+      Console.WriteLine("The sphinx ate you for dinner.");
+    }
+
     static void Main()
   {
     Console.WriteLine("The sphinx will ask you a riddle. Get it wrong and she will eat you...");
@@ -19,12 +27,12 @@ namespace Challenge {
       Console.WriteLine(secondRiddle.GetQuestion());
       string answer2 = Console.ReadLine();
       if (secondRiddle.AskRiddle(answer2)) {
-        Console.WriteLine("You defeated the Sphinx!");
+        Program.Win();
       } else {
-        Console.WriteLine("The Sphinx ate you for dinner.");
+        Program.Lose();
       }
     } else {
-      Console.WriteLine("The Sphinx ate you for dinner.");
+      Program.Lose();
       }
     }
   }
