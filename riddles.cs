@@ -19,14 +19,13 @@ namespace Challenge.Models {
 
     public bool AskRiddle(string input)
     {
-      if (input == Answer) {
+      if (input.ToLower() == Answer) {
         return true;
       } else {
         return false;
       }
     }
   }
-
 }
 
 

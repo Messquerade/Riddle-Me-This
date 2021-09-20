@@ -9,21 +9,25 @@ namespace Challenge {
   {
     static void Main()
   {
-    Riddle firstRiddle = new Riddle("What is at the end of the rainbow?", "W");
+    Console.WriteLine("The sphinx will ask you a riddle. Get it wrong and she will eat you...");
+    Riddle firstRiddle = new Riddle("What is at the end of the rainbow?", "w");
+    Riddle secondRiddle = new Riddle("The more of this there is, the less you see? What is it?", "darkness");
     Console.WriteLine(firstRiddle.GetQuestion());
     string answer1 = Console.ReadLine();
-// bool answer1 = question1 == "Yes" 
     if (firstRiddle.AskRiddle(answer1)) {
-      Console.WriteLine("Congratulations! You defeated the Sphinx!");
-
+      Console.WriteLine("Pretty smart. But how about this one?");
+      Console.WriteLine(secondRiddle.GetQuestion());
+      string answer2 = Console.ReadLine();
+      if (secondRiddle.AskRiddle(answer2)) {
+        Console.WriteLine("You defeated the Sphinx!");
+      } else {
+        Console.WriteLine("The Sphinx ate you for dinner.");
+      }
     } else {
       Console.WriteLine("The Sphinx ate you for dinner.");
       }
-
-
     }
   }
-
 }
 
 // firstRiddle.GetQuestion();
